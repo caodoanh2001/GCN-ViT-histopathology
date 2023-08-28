@@ -241,3 +241,5 @@ class GCNViTClsNodeNewRelationshipBestModel(nn.Module):
 
         probs = self.classifier_(ce_logits)
         return probs
+    
+select_model = GCNViTClsNodeNewRelationshipBestModel
