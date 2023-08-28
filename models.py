@@ -9,6 +9,9 @@ from skimage.util.shape import view_as_windows
 from att_utils import MultiheadAttention
 
 class CrossAttention(nn.Module):
+    '''
+    Cross-Attention between two branches. Originaly introduced in https://github.com/IBM/CrossViT
+    '''
     def __init__(self, dim, num_heads=8, qkv_bias=False, qk_scale=None, attn_drop=0., proj_drop=0.):
         super().__init__()
         self.num_heads = num_heads
@@ -40,6 +43,9 @@ class CrossAttention(nn.Module):
         return x
 
 class MHSA(nn.Module):
+    '''
+    define a MHSA class for stacking in nn.ModuleList()
+    '''
     def __init__(self, embed_dim, num_heads):
         super().__init__()
 
@@ -52,7 +58,6 @@ class MHSA(nn.Module):
 
 class GCNViTClsNodeNewRelationshipBestModel(nn.Module):
     '''
-
     # //
     # //                       _oo0oo_
     # //                      o8888888o
