@@ -56,7 +56,7 @@ class MHSA(nn.Module):
     def forward(self, x, att_mask=None):
         return self.mhsa(x, x, x, attn_mask=att_mask)[0]
 
-class GCNViTClsNodeNewRelationshipBestModel(nn.Module):
+class GVHNet(nn.Module):
     '''
     # //
     # //                       _oo0oo_
@@ -247,4 +247,4 @@ class GCNViTClsNodeNewRelationshipBestModel(nn.Module):
         probs = self.classifier_(ce_logits)
         return probs
     
-select_model = GCNViTClsNodeNewRelationshipBestModel
+select_model = GVHNet
